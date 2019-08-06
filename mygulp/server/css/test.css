@@ -1,0 +1,11 @@
+div {
+  background: pink; }
+
+p {
+  background: #99f; }
+
+span {
+  display: block;
+  background: #f99;
+  height: 12px;
+  width: 12px; }
