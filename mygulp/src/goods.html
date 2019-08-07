@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/goods.css">
+    <link rel="stylesheet" href="../css/public.css">
+</head>
+<script src="../jquery.1.12.4.js"></script>
+<script src="../jquery.banner.2.0.0.js"></script>
+<script src="../js/banner.js"></script>
+<body>
+<!-- top -->
+    <div id="top">
+        <div class="margin">
+            <h3><span>★</span>渔具专卖 特价户外用品</h3>
+            <p class="p1">您好,游客 [<a href="html/login.html">登陆</a>] [<a href="html/register.html">注册</a>] <span>|</span><a href="">公告</a><span>|</span><a href="">手机版</a></p>
+            <p class="p2">您好,<b></b><a href="##">退出</a></p>
+        </div>
+    </div>
+    <script>
+            var msg = localStorage.getItem("loginUser");
+            console.log(msg)
+            if(msg){
+            $("#top").find(".p1").hide();
+            $("#top").find(".p2").show();
+            $("#top").find(".p2").find("b").html(JSON.parse(msg).user);
+        }else{
+            $("#top").find(".p1").show();
+            $("#top").find(".p2").hide();
+        }
+    
+        // 点击退出时,修改登录状态
+        $("#top").find(".p2").find("a").click(function(){
+            localStorage.removeItem("loginUser");
+            $("#top").find(".p1").show();
+            $("#top").find(".p2").hide();
+        })
+        </script>
+<!-- header -->
+    <header class="margin">
+        <div class="logo">
+            <a href=""><img src="../images/logo.png" /></a>
+        </div>
+        <div class="search">
+            <form>
+                <input type="text" class="txt" value="搜索商品 |">
+                <input type="submit" class="sub" value="搜索">
+            </form>
+            <p>
+                <b>热门搜索:</b>
+                <a href="">台钓</a>
+                <a href="">野钓</a>
+                <a href="">路亚</a>
+                <a href="">海钓</a>
+                <a href="">矶钓</a>
+            </p>
+        </div>
+        <div class="add">
+            <dl class="left">
+                <dt>
+                    <i class="my bg"></i>
+                    <a href="">我的渔美人</a>
+                    <i class="xia bg"></i>
+                </dt>
+                <dd>
+                    <p>您好,游客</p>
+                    <div class="bot">
+                        <ul class="left">
+                            <li><a href="">我的订单</a></li>
+                            <li><a href="">我的团购</a></li>
+                            <li><a href="">我的咨询</a></li>
+                        </ul>
+                        <div class="line"></div>
+                        <ul class="right">
+                            <li><a href="">我的收藏</a></li>
+                            <li><a href="">我的地址</a></li>
+                            <li><a href="">我的优惠券</a></li>
+                        </ul>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="right">
+                <dt>
+                    <i class="che bg"></i>
+                    <em>0</em>
+                    <a href="car.html">购物车</a>
+                    <i class="rig bg"></i>
+                </dt>
+                <dd>
+                    <i class="zzz bg"></i>
+                    <span>购物车中还没有商品,赶紧选购吧!</span>
+                </dd>
+            </dl>
+            <script>
+                $("dl.left").find("dt").hover(function(){
+                    $(this).css({
+                        background:"#fff",
+                    }).siblings().css({
+                        display:"block",
+                        borderTop:0,
+                        zIndex:999                       
+                    }).siblings()
+                    .css({
+                        border:"#efefef 1px solid"
+                    })
+                    .find(".my").css({
+                        backgroundPosition:"-121px -60px",
+                    })
+                },function(){
+                    $(this).css("background","#f7f7f7").siblings().css({
+                        display:"none",
+                        border:"#efefef 1px solid",
+                    }).siblings()
+                    .css({
+                        border:"#efefef 1px solid"
+                    })
+                    .find(".my").css({
+                        backgroundPosition:"-121px -30px"
+                    })
+                })
+                $("dl.right").find("dt").hover(function(){
+                    $(this).css({
+                        borderBottom:0,
+                        background:"#fff"
+                    }).siblings().css({
+                        display:"block",
+                        boderTop:0,
+                        zIndex:999
+                    }).siblings()
+                    .css({
+                        border:"#efefef 1px solid"
+                    })
+                    .find(".che").css({
+                        backgroundPosition:"-121px -120px"
+                    })
+                },function(){
+                    $(this).css("background","#f7f7f7").siblings().css({
+                        border:"#efefef 1px solid",
+                        display:"none"
+                    }).siblings()
+                    .find(".che").css({
+                        backgroundPosition:"-121px -90px"
+                    })
+                })
+            </script>
+        </div>
+    </header>
+<!-- main -->
+    <main class="margin">
+        <!-- <div class="box">
+            <a href=""><img src="../images/g1.jpg" alt=""></a>
+            <a href="" class="aa">光威鱼竿刚圣鲤湖库版19调休闲版28调黑坑竞技手杆超轻硬大物杆</a>
+            <b>￥1,200.00</b>
+            <span>加入购物车</span>
+        </div> -->
+    </main>
+<!-- footer -->
+    <footer class="margin">
+        <p class="p1">
+            <a href="">首页</a>
+            <span>|</span>
+            <a href="">关于渔美人</a>
+            <span>|</span>
+            <a href="">联系渔美人</a>
+            <span>|</span>
+            <a href="">公告</a>
+            <span>|</span>
+            <a href="">口碑</a>
+            <span>|</span>
+            <a href="">品牌</a>
+            <span>|</span>
+            <a href="">批发</a>
+            <span>|</span>
+            <a href="">加盟</a>
+            <span>|</span>
+            <a href="">商城广告</a>
+            <span>|</span>
+            <a href="">用户反馈</a>
+            <span>|</span>
+            <a href="">钓鱼论坛</a>
+        </p>
+        <p class="p2">
+            渔美人商城 www.ymraaa.com版权所有Copyright&copy;2014-2019
+            <a href="">粤ICP备07039193号-2</a>
+        </p>
+    </footer>
+</body>
+<script src="../libs/ajax.js"></script>
+<script src="../libs/cookie.js"></script>
+<script src="../js/list.js"></script>
+</html>
