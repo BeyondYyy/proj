@@ -65,7 +65,7 @@
                 <dl class="left">
                     <dt>
                         <i class="my bg"></i>
-                        <a href="">我的渔美人</a>
+                        <a href="../index.html">我的渔美人</a>
                         <i class="xia bg"></i>
                     </dt>
                     <dd>
@@ -89,7 +89,7 @@
                     <dt>
                         <i class="che bg"></i>
                         <em>0</em>
-                        <a href="html/car.html">购物车</a>
+                        <a href="car.html">购物车</a>
                         <i class="rig bg"></i>
                     </dt>
                     <dd>
@@ -674,16 +674,16 @@
                 })
             </script>
             <ul>
-                <li><a href="../index.heml">首页</a></li>
+                <li><a href="../index.html">首页</a></li>
                 <li><a href="goods.html">鱼竿</a></li>
-                <li><a href="">鱼线</a></li>
-                <li><a href="">鱼轮</a></li>
-                <li><a href="">鱼钩</a></li>
-                <li><a href="">鱼漂</a></li>
-                <li><a href="">鱼饵</a></li>
-                <li><a href="">配件</a></li>
-                <li><a href="">特价</a></li>
-                <li><a href="">优惠券</a></li>
+                <li><a href="goods.html">鱼线</a></li>
+                <li><a href="goods.html">鱼轮</a></li>
+                <li><a href="goods.html">鱼钩</a></li>
+                <li><a href="goods.html">鱼漂</a></li>
+                <li><a href="goods.html">鱼饵</a></li>
+                <li><a href="goods.html">配件</a></li>
+                <li><a href="goods.html">特价</a></li>
+                <li><a href="goods.html">优惠券</a></li>
             </ul>
             <script>
                 $("nav").find("dd").hover(function(){
@@ -705,32 +705,63 @@
             </script>
         </nav>
 <!-- mian -->
-    <main>
-        <table border="1" cellspacing="0" width="800" align="center">
+    <main class="margin">
+        <p><a href="../index.html">首页</a>>购物车</p>
+        <h3>您购物车里的商品</h3>
+        <table border="1" cellspacing="0" align="center">
             <thead>
                 <tr>
-                    <th>图片</th>
-                    <th>名字</th>
-                    <th>价格</th>
-                    <th>数量</th>
-                    <th>操作</th>
+                    <th class="th1">店铺商品</th>
+                    <th class="th2">价格</th>
+                    <th class="th3">数量</th>
+                    <th class="th4">小计</th>
+                    <th class="th5">操作</th>
                 </tr>
             </thead>
             <tbody>
-                <tr>
-                    <td colspan="5">购物车为空</td>
-                </tr>
-                <tr>
-                    <td><img src="../images/g2.jpg"></td>
-                    <td>名字</td>
-                    <td>价格</td>
-                    <td><input type="number" value="10"></td>
-                    <td>删除</td>
-                </tr>
+                <!-- <tr>
+                    <td class="t1">
+                        <a href="##" class="img"><img src="" alt=""></a>
+                        <b></b>
+                    </td>
+                    <td class="t2">价格</td>
+                    <td class="t3"><input class="num" type="number" value="1" min="1"></td>
+                    <td class="count">小计</td>
+                    <td class="t4 del bg">操作</td>
+                </tr> -->
             </tbody>
         </table>
-
     </main>
+<!-- footer -->
+<footer class="margin">
+        <p class="p1">
+            <a href="">首页</a>
+            <span>|</span>
+            <a href="">关于渔美人</a>
+            <span>|</span>
+            <a href="">联系渔美人</a>
+            <span>|</span>
+            <a href="">公告</a>
+            <span>|</span>
+            <a href="">口碑</a>
+            <span>|</span>
+            <a href="">品牌</a>
+            <span>|</span>
+            <a href="">批发</a>
+            <span>|</span>
+            <a href="">加盟</a>
+            <span>|</span>
+            <a href="">商城广告</a>
+            <span>|</span>
+            <a href="">用户反馈</a>
+            <span>|</span>
+            <a href="">钓鱼论坛</a>
+        </p>
+        <p class="p2">
+            渔美人商城 www.ymraaa.com版权所有Copyright&copy;2014-2019
+            <a href="">粤ICP备07039193号-2</a>
+        </p>
+    </footer>
 </body>
 <script src="../libs/ajax.js"></script>
 <script src="../libs/cookie.js"></script>
@@ -745,6 +776,9 @@
             this.load();
             // D1.绑定事件
             this.addEvent()
+            this.em = document.querySelector("header .right em")
+            this.n = JSON.parse(getCookie("goods")).length;
+            this.em.innerHTML = this.n;
         }
         addEvent(){
             var that = this;
@@ -759,6 +793,8 @@
                     that.changeCookie(function(i){
                         that.goods.splice(i,1)
                     });
+                    this.n--;
+                    // console.log(this.n)
                 }
             })
             // U1.采用事件委托绑定修改数量的事件
@@ -809,17 +845,42 @@
                 this.goods.forEach((goodsVal)=>{
                     // 比较,一致,渲染对应数据
                     if(resVal.goodsId == goodsVal.id){
+                        var p = resVal.price.split("").splice(1).join("")
+                        var p1 = p.replace(",","")
+                        var n = goodsVal.num
+                        // console.log(2.00*3)
+                        var sum = p1 * n;
+                        // console.log(sum.toString().length)
+                        if(sum.toString().length == 4){
+                            var sum = sum.toString().split("")
+                            sum.splice(1,0,",")
+                            sum = sum.join("")
+                        }else if(sum.toString().length == 5){
+                            var sum = sum.toString().split("")
+                            sum.splice(2,0,",")
+                            sum = sum.join("")
+                        }
+                        else{
+                            sum = sum;
+                        }
+                        // console.log(sum)
                         str += `<tr index="${resVal.goodsId}">
-                                    <td><img src="${resVal.url}"></td>
-                                    <td>${resVal.price}</td>
+                                    <td class="t1">
+                                        <a href="##" class="img"><img src="${resVal.url}"></a>
+                                        <b>${resVal.tip}</b>
+                                    </td>
+                                    <td class="t2">${resVal.price}</td>
                                     <td><input class="num" type="number" value="${goodsVal.num}" min=1></td>
+                                    <td class="count">￥${sum}.00</td>
                                     <td class="del">删除</td>
                                 </tr>`;
                     }
                 })
             })
-            console.log(str);
+            // console.log(str);
             this.tbody.innerHTML = str;
+
+            // console.log(this.em)
         }
     }
 

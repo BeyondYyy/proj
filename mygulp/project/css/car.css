@@ -244,3 +244,78 @@ nav {
         padding: 0 25px; }
         nav ul li a:hover {
           background: #213574; }
+
+/* main */
+main {
+  margin-top: 10px; }
+  main p {
+    font: 14px/30px "";
+    color: #999; }
+    main p a:hover {
+      color: #356acb;
+      border-bottom: #356acb 1px solid; }
+  main h3 {
+    font: 16px/44px "";
+    color: #333; }
+  main table {
+    border: #ddd 1px solid;
+    width: 1210px;
+    border-top: #999 2px solid; }
+    main table thead {
+      background: #f7f7f7; }
+      main table thead tr {
+        height: 28px;
+        font: 12px/28px "";
+        color: #666; }
+        main table thead tr .th1 {
+          width: 420px; }
+        main table thead tr .th2 {
+          width: 170px; }
+        main table thead tr .th3 {
+          width: 150px; }
+        main table thead tr .th4 {
+          width: 240px; }
+    main table tbody tr {
+      background: #fff; }
+      main table tbody tr td {
+        height: 95px; }
+        main table tbody tr td.t1 {
+          display: flex; }
+          main table tbody tr td.t1 a img {
+            width: 65px;
+            height: 65px;
+            border: #cecece 1px solid;
+            margin: 10px 20px 0 10px; }
+          main table tbody tr td.t1 b {
+            flex: 1;
+            margin-top: 10px;
+            font: 14px/24px "";
+            color: #333; }
+        main table tbody tr td.t2 {
+          text-align: center;
+          font: 700 16px/95px "";
+          color: #666; }
+          main table tbody tr td.t2 input {
+            width: 100px; }
+        main table tbody tr td.t3 input {
+          width: 60px; }
+        main table tbody tr td.count {
+          text-align: center;
+          font: 700 16px/95px "";
+          color: red; }
+        main table tbody tr td.del {
+          text-align: center;
+          font: 700 16px/95px "";
+          color: #356acb; }
+
+/* footer */
+footer {
+  padding: 20px 0;
+  text-align: center; }
+  footer p {
+    font: 12px/30px ""; }
+    footer p a {
+      color: #666; }
+      footer p a:hover {
+        color: red;
+        border-bottom: red 1px solid; }

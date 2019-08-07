@@ -4,10 +4,13 @@
         constructor(){
             this.cont = document.querySelector("main");
             this.url = "http://localhost/mygulp/project/data/goods.json";
-
+            this.em = document.querySelector("header .right em")
             this.load();
             // 1.绑定事件
             this.addEvent();
+            this.n = JSON.parse(getCookie("goods")).length;
+            this.em.innerHTML=JSON.parse(getCookie("goods")).length;
+
         }
         addEvent(){
             var that = this;
@@ -19,6 +22,8 @@
                     // 3.存cookie了
                     that.setCookie();
                 }
+                that.n++;
+                that.em.innerHTML = that.n;
             })
         }
         setCookie(){
@@ -58,6 +63,19 @@
             ajaxGet(this.url,function(res){
                 that.res = JSON.parse(res);
                 that.display();
+                //懒加载
+                that.aimg = document.querySelectorAll("img");
+                that.arr = Array.from(that.aimg);
+                that.t;
+                that.lazy();
+                var _that = that;
+                onload = onscroll = function(){
+                    clearTimeout(_that.t);
+                    var __that = _that
+                    that.t = setTimeout(function(){
+                        __that.lazy();
+                    },100)
+                }
             })
         }
         display(){
@@ -65,15 +83,29 @@
             var str = "";
             this.res.forEach((val)=>{
                 str += `<div class="box" qwe="${val.goodsId}">
-                            <a href=""><img src="${val.url}" alt=""></a>
-                            <a href="" class="aa">${val.tip}</a>
+                            <a href="info.html"><img ljz="${val.url}" alt=""></a>
+                            <a href="info.html" class="aa">${val.tip}</a>
                             <b>${val.price}</b>
                             <span class="btn">加入购物车</span>
                         </div>`
             })
             this.cont.innerHTML = str;
         }
-    }
+        lazy(){
+            this.scrollT = document.documentElement.scrollTop;
+            this.clientH = document.documentElement.clientHeight;
+            
+            for(var i=0;i<this.arr.length;i++){
+                // console.log(`i:${i}`);
+                if(this.arr[i].offsetTop - this.scrollT < this.clientH){
+                    this.arr[i].src = this.arr[i].getAttribute("ljz");
+                    // 小心使用：在循环中修改了循环次数
+                    this.arr.splice(i,1)
+                }
+            }
+        }
 
+    }
     new List;
+
 })();

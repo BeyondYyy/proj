@@ -307,10 +307,114 @@ nav{
     }
 }
 
+/* main */
+main{
+    margin-top:10px;
+    p{
+        font:14px/30px "";
+        color:#999;
+        a{
+            &:hover{
+                color:#356acb;
+                border-bottom:#356acb 1px solid;
+            }
+        }
+    }
+    h3{
+        font:16px/44px "";
+        color:#333
+    }
+    table{
+        border:#ddd 1px solid;
+        width:1210px;
+        border-top:#999 2px solid;
+        thead{
+            background:#f7f7f7;
+            tr{
+                height:28px;
+                font:12px/28px "";
+                color:$s;
+                .th1{
+                    width:420px;
+                }
+                .th2{
+                    width:170px;
+                }
+                .th3{
+                    width:150px;
+                }
+                .th4{
+                    width:240px;
+                }
+            }
+        }
+        tbody{
+            tr{
+                background:#fff;
+                td{
+                    height:95px;
+                    &.t1{
+                        display: flex;
+                        a{
+                            img{
+                                width:65px;
+                                height:65px;
+                                border:#cecece 1px solid;
+                                margin:10px 20px 0 10px;
+                            }
+                        }
+                        b{
+                            flex: 1;
+                            margin-top:10px;
+                            font:14px/24px "";
+                            color:#333;
+                        }
+                    }
+                    &.t2{
+                        text-align: center;
+                        font:700 16px/95px "";
+                        color:#666;
+                        input{
+                            width:100px;
 
+                        }
+                    }
+                    &.t3{
+                        input{
+                            width:60px;
+                        }
+                    }
+                    &.count{
+                        text-align: center;
+                        font:700 16px/95px "";
+                        color:red;
+                    }
+                    &.del{
+                        text-align: center;
+                        font:700 16px/95px "";
+                        color:#356acb;
+                    }
+                }
+            }
+        }
+    }
+}
 
-
-
+/* footer */ 
+footer{
+    padding:20px 0;
+    text-align: center;
+    p{
+        font:12px/30px "";
+        a{
+            color:$s;
+            &:hover{
+                color:red;
+                border-bottom: red 1px solid;
+            }
+        }
+    }
+}
 
 
 
