@@ -33,7 +33,6 @@
                     email:this.email.val()
                 },
                 success:(res)=>{
-                    // 请求成功之后，解析数据，根据数据的返回信息，决定不同的状态
                     res = JSON.parse(res);
                     console.log(res);
                     console.log(res.code)

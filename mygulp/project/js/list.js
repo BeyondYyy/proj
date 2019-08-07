@@ -63,8 +63,10 @@
             ajaxGet(this.url,function(res){
                 that.res = JSON.parse(res);
                 that.display();
+                
                 //懒加载
                 that.aimg = document.querySelectorAll("img");
+                console.log(that.aimg)
                 that.arr = Array.from(that.aimg);
                 that.t;
                 that.lazy();
@@ -76,14 +78,33 @@
                         __that.lazy();
                     },100)
                 }
+                // that.box = document.querySelector("main .box");
+                // console.log(that.box)
+                // that.box.addEventListener("click",function(){
+
+                // })
+                // that.id = that.aimg.parentNode.parentNode.getAttribute()
+                // console.log(that.id)
+                // that.aimg.onclick = function(){
+
+                // }
             })
         }
+//         jump(){
+// 			var that=this
+// 			this.cont[0].addEventListener("click",function(eve){
+// 				if(eve.target.className == "tiao"){	
+// 					that.id=eve.target.parentNode.getAttribute("qwe")
+// //					var msg=getCookie("goods")
+// 					that.res.some((resVal)=>{
+// 						this.str=""
+
         display(){
             // console.log(this.res);
             var str = "";
             this.res.forEach((val)=>{
                 str += `<div class="box" qwe="${val.goodsId}">
-                            <a href="info.html"><img ljz="${val.url}" alt=""></a>
+                            <a href="info.html?${val.goodsId}"><img ljz="${val.url}" alt=""></a>
                             <a href="info.html" class="aa">${val.tip}</a>
                             <b>${val.price}</b>
                             <span class="btn">加入购物车</span>
