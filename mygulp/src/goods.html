@@ -20,25 +20,6 @@
             <p class="p2">您好,<b></b><a href="##">退出</a></p>
         </div>
     </div>
-    <script>
-            var msg = localStorage.getItem("loginUser");
-            // console.log(msg)
-            if(msg){
-            $("#top").find(".p1").hide();
-            $("#top").find(".p2").show();
-            $("#top").find(".p2").find("b").html(JSON.parse(msg).user);
-        }else{
-            $("#top").find(".p1").show();
-            $("#top").find(".p2").hide();
-        }
-    
-        // 点击退出时,修改登录状态
-        $("#top").find(".p2").find("a").click(function(){
-            localStorage.removeItem("loginUser");
-            $("#top").find(".p1").show();
-            $("#top").find(".p2").hide();
-        })
-        </script>
 <!-- header -->
     <header class="margin">
         <div class="logo">
@@ -94,62 +75,10 @@
                     <span>购物车中还没有商品,赶紧选购吧!</span>
                 </dd>
             </dl>
-            <script>
-                $("dl.left").find("dt").hover(function(){
-                    $(this).css({
-                        background:"#fff",
-                    }).siblings().css({
-                        display:"block",
-                        borderTop:0,
-                        zIndex:999                       
-                    }).siblings()
-                    .css({
-                        border:"#efefef 1px solid"
-                    })
-                    .find(".my").css({
-                        backgroundPosition:"-121px -60px",
-                    })
-                },function(){
-                    $(this).css("background","#f7f7f7").siblings().css({
-                        display:"none",
-                        border:"#efefef 1px solid",
-                    }).siblings()
-                    .css({
-                        border:"#efefef 1px solid"
-                    })
-                    .find(".my").css({
-                        backgroundPosition:"-121px -30px"
-                    })
-                })
-                $("dl.right").find("dt").hover(function(){
-                    $(this).css({
-                        borderBottom:0,
-                        background:"#fff"
-                    }).siblings().css({
-                        display:"block",
-                        boderTop:0,
-                        zIndex:999
-                    }).siblings()
-                    .css({
-                        border:"#efefef 1px solid"
-                    })
-                    .find(".che").css({
-                        backgroundPosition:"-121px -120px"
-                    })
-                },function(){
-                    $(this).css("background","#f7f7f7").siblings().css({
-                        border:"#efefef 1px solid",
-                        display:"none"
-                    }).siblings()
-                    .find(".che").css({
-                        backgroundPosition:"-121px -90px"
-                    })
-                })
-            </script>
         </div>
     </header>
 <!-- nav -->
-<nav class="margin">
+    <nav class="margin">
         <dl>
             <dt>分类</dt>
             <dd>
@@ -218,107 +147,107 @@
                 <a href="">鱼线</a>
                 <i class="bg"></i>
                 <div class="box">
-                        <p class="p1">
-                            <a href="">尼龙线</a>
-                            <span>|</span>
-                            <a href="">台钓线</a>
-                            <span>|</span>
-                            <a href="">路亚线</a>
-                        </p>
-                        <p class="p2">
-                            <a href="">大马力</a>
-                        </p>
-                        <p class="p3">
-                            <a href="">碳线</a>
-                        </p>
-                        <p class="p4">
-                            <a href="">前导线</a>
-                        </p>
-                    </div>
+                    <p class="p1">
+                        <a href="">尼龙线</a>
+                        <span>|</span>
+                        <a href="">台钓线</a>
+                        <span>|</span>
+                        <a href="">路亚线</a>
+                    </p>
+                    <p class="p2">
+                        <a href="">大马力</a>
+                    </p>
+                    <p class="p3">
+                        <a href="">碳线</a>
+                    </p>
+                    <p class="p4">
+                        <a href="">前导线</a>
+                    </p>
+                </div>
             </dd>
             <dd>
                 <a href="">鱼轮</a>
                 <i class="bg"></i>
                 <div class="box">
-                        <p class="p1">
-                            <a href="">纺车轮</a>
-                        </p>
-                        <p class="p2">
-                            <a href="">水滴轮</a>
-                        </p>
-                        <p class="p3">
-                            <a href="">鼓轮</a>
-                        </p>
-                        <p class="p4">
-                            <a href="">筏轮</a>
-                        </p>
-                        <p class="p5">
-                            <a href="">前打轮</a>
-                        </p>
-                        <p class="p6">
-                            <a href="">渔轮配件</a>
-                        </p>
-                    </div>
+                    <p class="p1">
+                        <a href="">纺车轮</a>
+                    </p>
+                    <p class="p2">
+                        <a href="">水滴轮</a>
+                    </p>
+                    <p class="p3">
+                        <a href="">鼓轮</a>
+                    </p>
+                    <p class="p4">
+                        <a href="">筏轮</a>
+                    </p>
+                    <p class="p5">
+                        <a href="">前打轮</a>
+                    </p>
+                    <p class="p6">
+                        <a href="">渔轮配件</a>
+                    </p>
+                </div>
             </dd>
             <dd>
                 <a href="">鱼钩</a>
                 <i class="bg"></i>
                 <div class="box">
-                        <p class="p1">
-                            <a href="">台钓钩</a>
-                            <span>|</span>
-                            <a href="">袖钩</a>
-                            <span>|</span>
-                            <a href="">关东钩</a>
-                            <span>|</span>
-                            <a href="">伊豆钩</a>
-                            <span>|</span>
-                            <a href="">伊势尼</a>
-                            <span>|</span>
-                            <a href="">千又钩</a>
-                            <span>|</span>
-                            <a href="">丸世钩</a>
-                            <span>|</span>
-                            <a href="">台钓线组</a>
-                        </p>
-                        <p class="p2">
-                            <a href="">路亚钩</a>
-                            <span>|</span>
-                            <a href="">曲柄钩</a>
-                            <span>|</span>
-                            <a href="">飞蝇钩</a>
-                            <span>|</span>
-                            <a href="">海钓钩</a>
-                            <span>|</span>
-                            <a href="">铅头钩</a>
-                        </p>
-                        <p class="p3">
-                            <a href="">爆炸钩</a>
-                        </p>
-                    </div>
+                    <p class="p1">
+                        <a href="">台钓钩</a>
+                        <span>|</span>
+                        <a href="">袖钩</a>
+                        <span>|</span>
+                        <a href="">关东钩</a>
+                        <span>|</span>
+                        <a href="">伊豆钩</a>
+                        <span>|</span>
+                        <a href="">伊势尼</a>
+                        <span>|</span>
+                        <a href="">千又钩</a>
+                        <span>|</span>
+                        <a href="">丸世钩</a>
+                        <span>|</span>
+                        <a href="">台钓线组</a>
+                    </p>
+                    <p class="p2">
+                        <a href="">路亚钩</a>
+                        <span>|</span>
+                        <a href="">曲柄钩</a>
+                        <span>|</span>
+                        <a href="">飞蝇钩</a>
+                        <span>|</span>
+                        <a href="">海钓钩</a>
+                        <span>|</span>
+                        <a href="">铅头钩</a>
+                    </p>
+                    <p class="p3">
+                        <a href="">爆炸钩</a>
+                    </p>
+                </div>
             </dd>
             <dd>
                 <a href="">鱼漂</a>
                 <i class="bg"></i>
                 <div class="box">
-                        <p class="p1">
-                            <a href="">台钓漂</a>
-                            <span>|</span>
-                            <a href="">芦苇漂</a>
-                            <span>|</span>
-                            <a href="">巴尔衫木</a>
-                            <span>|</span>
-                            <a href="">纳米漂</a>
-                            <span>|</span>
-                            <a href="">七星漂</a>
-                        </p>
-                        <p class="p2">
-                            <a href="">夜光漂</a>
-                        </p>
-                        <p class="p3">
-                            <a href="">阿波漂</a>
-                        </p>
-                    </div>
+                    <p class="p1">
+                        <a href="">台钓漂</a>
+                        <span>|</span>
+                        <a href="">芦苇漂</a>
+                        <span>|</span>
+                        <a href="">巴尔衫木</a>
+                        <span>|</span>
+                        <a href="">纳米漂</a>
+                        <span>|</span>
+                        <a href="">七星漂</a>
+                    </p>
+                    <p class="p2">
+                        <a href="">夜光漂</a>
+                    </p>
+                    <p class="p3">
+                        <a href="">阿波漂</a>
+                    </p>
+                </div>
             </dd>
             <dd>
                 <a href="">鱼饵</a>
@@ -641,65 +570,47 @@
                 </div>
             </dd>
             <dd>
-                <a href="">渔网</a>
-                <i class="bg"></i>
-                <div class="box">
-                        <p class="p2">
-                            <a href="">撒网</a>
-                        </p>
-                        <p class="p3">
-                            <a href="">粘网</a>
-                        </p>
-                        <p class="p4">
-                            <a href="">地笼</a>
-                        </p>
-                    </div>
-                </dd>
-            </dl>
-            <script>
-                $("nav").find("dl").hover(function(){
-                    $(this).find("dd")
-                    .css({
-                        display:"block"
-                    })
-                },function(){
-                    $(this).find("dd")
-                    .css({
-                        display:"none"
-                    })
+            <a href="">渔网</a>
+            <i class="bg"></i>
+            <div class="box">
+                    <p class="p2">
+                        <a href="">撒网</a>
+                    </p>
+                    <p class="p3">
+                        <a href="">粘网</a>
+                    </p>
+                    <p class="p4">
+                        <a href="">地笼</a>
+                    </p>
+                </div>
+            </dd>
+        </dl>
+        <script>
+            $("nav").find("dl").hover(function(){
+                $(this).find("dd")
+                .css({
+                    display:"block"
                 })
-            </script>
-            <ul>
-                <li><a href="../index.html">首页</a></li>
-                <li><a href="goods.html">鱼竿</a></li>
-                <li><a href="goods.html">鱼线</a></li>
-                <li><a href="goods.html">鱼轮</a></li>
-                <li><a href="goods.html">鱼钩</a></li>
-                <li><a href="goods.html">鱼漂</a></li>
-                <li><a href="goods.html">鱼饵</a></li>
-                <li><a href="goods.html">配件</a></li>
-                <li><a href="goods.html">特价</a></li>
-                <li><a href="goods.html">优惠券</a></li>
-            </ul>
-            <script>
-                $("nav").find("dd").hover(function(){
-                    $(this).css({
-                        
-                        // borderBottom:"1px #f7f7f7 solid",
-                        background:"#fff",
-                        boxShadow:"0 0 10px #999"
-                    }).find(".box").css({
-                        display:"block"
-                    })
-                },function(){
-                    $(this).css({
-                        boxShadow:"none"
-                    }).find(".box").css({
-                        display:"none"
-                    })
+            },function(){
+                $(this).find("dd")
+                .css({
+                    display:"none"
                 })
-            </script>
-        </nav>
+            })
+        </script>
+        <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="goods.html">鱼竿</a></li>
+            <li><a href="goods.html">鱼线</a></li>
+            <li><a href="goods.html">鱼轮</a></li>
+            <li><a href="goods.html">鱼钩</a></li>
+            <li><a href="goods.html">鱼漂</a></li>
+            <li><a href="goods.html">鱼饵</a></li>
+            <li><a href="goods.html">配件</a></li>
+            <li><a href="goods.html">特价</a></li>
+            <li><a href="goods.html">优惠券</a></li>
+        </ul>
+    </nav>
 <!-- main -->
     <main class="margin">
         <!-- <div class="box">
@@ -742,5 +653,6 @@
 </body>
 <script src="../libs/ajax.js"></script>
 <script src="../libs/cookie.js"></script>
+<script src="../js/index.js"></script>
 <script src="../js/list.js"></script>
 </html>

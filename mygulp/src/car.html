@@ -10,150 +10,75 @@
     <script src="../js/banner.js"></script>
     <link rel="stylesheet" href="../css/car.css">
     <link rel="stylesheet" href="../css/public.css">
-    <!-- <style>
-        table{text-align:center}
-        img{width:80px;height:80px;}
-    </style> -->
 </head>
 <body>
     <div id="top">
-            <div class="margin">
-                <h3><span>★</span>渔具专卖 特价户外用品</h3>
-                <p class="p1">您好,游客 [<a href="html/login.html">登陆</a>] [<a href="html/register.html">注册</a>] <span>|</span><a href="">公告</a><span>|</span><a href="">手机版</a></p>
-                <p class="p2">您好,<b></b><a href="##">退出</a></p>
-            </div>
+        <div class="margin">
+            <h3><span>★</span>渔具专卖 特价户外用品</h3>
+            <p class="p1">您好,游客 [<a href="html/login.html">登陆</a>] [<a href="html/register.html">注册</a>] <span>|</span><a href="">公告</a><span>|</span><a href="">手机版</a></p>
+            <p class="p2">您好,<b></b><a href="##">退出</a></p>
         </div>
-        <script>
-            var msg = localStorage.getItem("loginUser");
-            console.log(msg)
-            if(msg){
-            $("#top").find(".p1").hide();
-            $("#top").find(".p2").show();
-            $("#top").find(".p2").find("b").html(JSON.parse(msg).user);
-        }else{
-            $("#top").find(".p1").show();
-            $("#top").find(".p2").hide();
-        }
-    
-        // 点击退出时,修改登录状态
-        $("#top").find(".p2").find("a").click(function(){
-            localStorage.removeItem("loginUser");
-            $("#top").find(".p1").show();
-            $("#top").find(".p2").hide();
-        })
-        </script>
-    <!-- header -->
-        <header class="margin">
-            <div class="logo">
-                <a href=""><img src="../images/logo.png" /></a>
-            </div>
-            <div class="search">
-                <form>
-                    <input type="text" class="txt" value="搜索商品 |">
-                    <input type="submit" class="sub" value="搜索">
-                </form>
-                <p>
-                    <b>热门搜索:</b>
-                    <a href="">台钓</a>
-                    <a href="">野钓</a>
-                    <a href="">路亚</a>
-                    <a href="">海钓</a>
-                    <a href="">矶钓</a>
-                </p>
-            </div>
-            <div class="add">
-                <dl class="left">
-                    <dt>
-                        <i class="my bg"></i>
-                        <a href="../index.html">我的渔美人</a>
-                        <i class="xia bg"></i>
-                    </dt>
-                    <dd>
-                        <p>您好,游客</p>
-                        <div class="bot">
-                            <ul class="left">
-                                <li><a href="">我的订单</a></li>
-                                <li><a href="">我的团购</a></li>
-                                <li><a href="">我的咨询</a></li>
-                            </ul>
-                            <div class="line"></div>
-                            <ul class="right">
-                                <li><a href="">我的收藏</a></li>
-                                <li><a href="">我的地址</a></li>
-                                <li><a href="">我的优惠券</a></li>
-                            </ul>
-                        </div>
-                    </dd>
-                </dl>
-                <dl class="right">
-                    <dt>
-                        <i class="che bg"></i>
-                        <em>0</em>
-                        <a href="car.html">购物车</a>
-                        <i class="rig bg"></i>
-                    </dt>
-                    <dd>
-                        <i class="zzz bg"></i>
-                        <span>购物车中还没有商品,赶紧选购吧!</span>
-                    </dd>
-                </dl>
-                <script>
-                    $("dl.left").find("dt").hover(function(){
-                        $(this).css({
-                            background:"#fff",
-                        }).siblings().css({
-                            display:"block",
-                            borderTop:0,
-                            zIndex:999                       
-                        }).siblings()
-                        .css({
-                            border:"#efefef 1px solid"
-                        })
-                        .find(".my").css({
-                            backgroundPosition:"-121px -60px",
-                        })
-                    },function(){
-                        $(this).css("background","#f7f7f7").siblings().css({
-                            display:"none",
-                            border:"#efefef 1px solid",
-                        }).siblings()
-                        .css({
-                            border:"#efefef 1px solid"
-                        })
-                        .find(".my").css({
-                            backgroundPosition:"-121px -30px"
-                        })
-                    })
-                    $("dl.right").find("dt").hover(function(){
-                        $(this).css({
-                            borderBottom:0,
-                            background:"#fff"
-                        }).siblings().css({
-                            display:"block",
-                            boderTop:0,
-                            zIndex:999
-                        }).siblings()
-                        .css({
-                            border:"#efefef 1px solid"
-                        })
-                        .find(".che").css({
-                            backgroundPosition:"-121px -120px"
-                        })
-                    },function(){
-                        $(this).css("background","#f7f7f7").siblings().css({
-                            border:"#efefef 1px solid",
-                            display:"none"
-                        }).siblings()
-                        .find(".che").css({
-                            backgroundPosition:"-121px -90px"
-                        })
-                    })
-                </script>
-            </div>
-        </header>
+    </div>
+<!-- header -->
+    <header class="margin">
+        <div class="logo">
+            <a href=""><img src="../images/logo.png" /></a>
+        </div>
+        <div class="search">
+            <form>
+                <input type="text" class="txt" value="搜索商品 |">
+                <input type="submit" class="sub" value="搜索">
+            </form>
+            <p>
+                <b>热门搜索:</b>
+                <a href="">台钓</a>
+                <a href="">野钓</a>
+                <a href="">路亚</a>
+                <a href="">海钓</a>
+                <a href="">矶钓</a>
+            </p>
+        </div>
+        <div class="add">
+            <dl class="left">
+                <dt>
+                    <i class="my bg"></i>
+                    <a href="../index.html">我的渔美人</a>
+                    <i class="xia bg"></i>
+                </dt>
+                <dd>
+                    <p>您好,游客</p>
+                    <div class="bot">
+                        <ul class="left">
+                            <li><a href="">我的订单</a></li>
+                            <li><a href="">我的团购</a></li>
+                            <li><a href="">我的咨询</a></li>
+                        </ul>
+                        <div class="line"></div>
+                        <ul class="right">
+                            <li><a href="">我的收藏</a></li>
+                            <li><a href="">我的地址</a></li>
+                            <li><a href="">我的优惠券</a></li>
+                        </ul>
+                    </div>
+                </dd>
+            </dl>
+            <dl class="right">
+                <dt>
+                    <i class="che bg"></i>
+                    <em>0</em>
+                    <a href="car.html">购物车</a>
+                    <i class="rig bg"></i>
+                </dt>
+                <dd>
+                    <i class="zzz bg"></i>
+                    <span>购物车中还没有商品,赶紧选购吧!</span>
+                </dd>
+            </dl>
+        </div>
+    </header>
     
 <!-- nav -->
-        <nav class="margin">
+    <nav class="margin">
         <dl>
             <dt>分类</dt>
             <dd>
@@ -648,62 +573,44 @@
                 <a href="">渔网</a>
                 <i class="bg"></i>
                 <div class="box">
-                        <p class="p2">
-                            <a href="">撒网</a>
-                        </p>
-                        <p class="p3">
-                            <a href="">粘网</a>
-                        </p>
-                        <p class="p4">
-                            <a href="">地笼</a>
-                        </p>
-                    </div>
-                </dd>
-            </dl>
-            <script>
-                $("nav").find("dl").hover(function(){
-                    $(this).find("dd")
-                    .css({
-                        display:"block"
-                    })
-                },function(){
-                    $(this).find("dd")
-                    .css({
-                        display:"none"
-                    })
+                    <p class="p2">
+                        <a href="">撒网</a>
+                    </p>
+                    <p class="p3">
+                        <a href="">粘网</a>
+                    </p>
+                    <p class="p4">
+                        <a href="">地笼</a>
+                    </p>
+                </div>
+            </dd>
+        </dl>
+        <script>
+            $("nav").find("dl").hover(function(){
+                $(this).find("dd")
+                .css({
+                    display:"block"
                 })
-            </script>
-            <ul>
-                <li><a href="../index.html">首页</a></li>
-                <li><a href="goods.html">鱼竿</a></li>
-                <li><a href="goods.html">鱼线</a></li>
-                <li><a href="goods.html">鱼轮</a></li>
-                <li><a href="goods.html">鱼钩</a></li>
-                <li><a href="goods.html">鱼漂</a></li>
-                <li><a href="goods.html">鱼饵</a></li>
-                <li><a href="goods.html">配件</a></li>
-                <li><a href="goods.html">特价</a></li>
-                <li><a href="goods.html">优惠券</a></li>
-            </ul>
-            <script>
-                $("nav").find("dd").hover(function(){
-                    $(this).css({
-                        
-                        // borderBottom:"1px #f7f7f7 solid",
-                        background:"#fff",
-                        boxShadow:"0 0 10px #999"
-                    }).find(".box").css({
-                        display:"block"
-                    })
-                },function(){
-                    $(this).css({
-                        boxShadow:"none"
-                    }).find(".box").css({
-                        display:"none"
-                    })
+            },function(){
+                $(this).find("dd")
+                .css({
+                    display:"none"
                 })
-            </script>
-        </nav>
+            })
+        </script>
+        <ul>
+            <li><a href="../index.html">首页</a></li>
+            <li><a href="goods.html">鱼竿</a></li>
+            <li><a href="goods.html">鱼线</a></li>
+            <li><a href="goods.html">鱼轮</a></li>
+            <li><a href="goods.html">鱼钩</a></li>
+            <li><a href="goods.html">鱼漂</a></li>
+            <li><a href="goods.html">鱼饵</a></li>
+            <li><a href="goods.html">配件</a></li>
+            <li><a href="goods.html">特价</a></li>
+            <li><a href="goods.html">优惠券</a></li>
+        </ul>
+    </nav>
 <!-- mian -->
     <main class="margin">
         <p><a href="../index.html">首页</a>>购物车</p>
@@ -765,124 +672,5 @@
 </body>
 <script src="../libs/ajax.js"></script>
 <script src="../libs/cookie.js"></script>
-<script>
-    class Car{
-        constructor(){
-            this.tbody = document.querySelector("tbody");
-            console.log(this.tbody)
-            this.url = "http://localhost/mygulp/project/data/goods.json";
-            console.log(this.url)
-            // 1.先请求所有数据
-            this.load();
-            // D1.绑定事件
-            this.addEvent()
-            this.em = document.querySelector("header .right em")
-            this.n = JSON.parse(getCookie("goods")).length;
-            this.em.innerHTML = this.n;
-        }
-        addEvent(){
-            var that = this;
-            // D2.采用事件委托绑定删除的事件
-            this.tbody.addEventListener("click",function(eve){
-                if(eve.target.className == "del"){
-                    // D3.获取点击商品的id
-                    that.id = eve.target.parentNode.getAttribute("index");
-                    // D4.删除DOM元素
-                    eve.target.parentNode.remove();
-                    // D5.删除cookie中的数据
-                    that.changeCookie(function(i){
-                        that.goods.splice(i,1)
-                    });
-                    this.n--;
-                    // console.log(this.n)
-                }
-            })
-            // U1.采用事件委托绑定修改数量的事件
-            this.tbody.addEventListener("input",function(eve){
-                if(eve.target.className == "num"){
-                    // U2.获取修改数量对应的商品的id
-                    that.id = eve.target.parentNode.parentNode.getAttribute("index");
-                    // U3.获取修改之后的实时数量
-                    // that.num = eve.target.value;
-                    // U4.修改cookie中的数据
-                    that.changeCookie(function(i){
-                        that.goods[i].num = eve.target.value;
-                    });
-                }
-            })
-        }
-        changeCookie(callback){
-            // 先遍历cookie中读取出来的数据
-            var i = 0;
-            this.goods.some((val,index)=>{
-                // 拿到与点击相同的数据，结束
-                i = index;
-                return val.id == this.id;
-            })
-            callback(i);
-            // U5.最后要把操作之后的数据，再设置给cookie
-            setCookie("goods",JSON.stringify(this.goods));
-        }
-        load(){
-            var that = this;
-            ajaxGet(this.url,function(res){
-                that.res = JSON.parse(res);
-                // 2.读取cookie
-                that.getCookie()
-            })
-        }
-        getCookie(){
-            this.goods = getCookie("goods") ? JSON.parse(getCookie("goods")) : [];
-
-            // 3.开始比对数据，渲染页面
-            this.display();
-        }
-        display(){
-            var str = "";
-            // 遍历所有数据
-            this.res.forEach((resVal)=>{
-                // 遍历cookie中的数据
-                this.goods.forEach((goodsVal)=>{
-                    // 比较,一致,渲染对应数据
-                    if(resVal.goodsId == goodsVal.id){
-                        var p = resVal.price.split("").splice(1).join("")
-                        var p1 = p.replace(",","")
-                        var n = goodsVal.num
-                        // console.log(2.00*3)
-                        var sum = p1 * n;
-                        // console.log(sum.toString().length)
-                        if(sum.toString().length == 4){
-                            var sum = sum.toString().split("")
-                            sum.splice(1,0,",")
-                            sum = sum.join("")
-                        }else if(sum.toString().length == 5){
-                            var sum = sum.toString().split("")
-                            sum.splice(2,0,",")
-                            sum = sum.join("")
-                        }
-                        else{
-                            sum = sum;
-                        }
-                        // console.log(sum)
-                        str += `<tr index="${resVal.goodsId}">
-                                    <td class="t1">
-                                        <a href="##" class="img"><img src="${resVal.url}"></a>
-                                        <b>${resVal.tip}</b>
-                                    </td>
-                                    <td class="t2">${resVal.price}</td>
-                                    <td><input class="num" type="number" value="${goodsVal.num}" min=1></td>
-                                    <td class="count">￥${sum}.00</td>
-                                    <td class="del">删除</td>
-                                </tr>`;
-                    }
-                })
-            })
-            // console.log(str);
-            this.tbody.innerHTML = str;
-
-            // console.log(this.em)
-        }
-    }
-
-    new Car();
-</script>
+<script src="../js/index.js"></script>
+<script src="../js/car.js"></script>
