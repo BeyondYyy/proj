@@ -10,7 +10,12 @@
             this.addEvent();
             this.n = JSON.parse(getCookie("goods")).length;
             this.em.innerHTML=JSON.parse(getCookie("goods")).length;
-
+            this.cont2 = document.querySelector(".cont2");
+            this.up = document.querySelector(".up");
+            this.down = document.querySelector(".down")
+            this.num = 15;
+            this.index = 0;
+            this.pageEvent();
         }
         addEvent(){
             var that = this;
@@ -63,10 +68,10 @@
             ajaxGet(this.url,function(res){
                 that.res = JSON.parse(res);
                 that.display();
-                
+                //分页
                 //懒加载
                 that.aimg = document.querySelectorAll("img");
-                console.log(that.aimg)
+                // console.log(that.aimg)
                 that.arr = Array.from(that.aimg);
                 that.t;
                 that.lazy();
@@ -78,39 +83,81 @@
                         __that.lazy();
                     },100)
                 }
-                // that.box = document.querySelector("main .box");
-                // console.log(that.box)
-                // that.box.addEventListener("click",function(){
-
-                // })
-                // that.id = that.aimg.parentNode.parentNode.getAttribute()
-                // console.log(that.id)
-                // that.aimg.onclick = function(){
-
-                // }
+                that.creatPage();
+                
             })
         }
-//         jump(){
-// 			var that=this
-// 			this.cont[0].addEventListener("click",function(eve){
-// 				if(eve.target.className == "tiao"){	
-// 					that.id=eve.target.parentNode.getAttribute("qwe")
-// //					var msg=getCookie("goods")
-// 					that.res.some((resVal)=>{
-// 						this.str=""
 
         display(){
             // console.log(this.res);
             var str = "";
-            this.res.forEach((val)=>{
-                str += `<div class="box" qwe="${val.goodsId}">
-                            <a href="info.html?${val.goodsId}"><img ljz="${val.url}" alt=""></a>
-                            <a href="info.html" class="aa">${val.tip}</a>
-                            <b>${val.price}</b>
-                            <span class="btn">加入购物车</span>
-                        </div>`
-            })
-            this.cont.innerHTML = str;
+            
+            // this.res.forEach((val)=>{
+            //     str += `<div class="box" qwe="${val.goodsId}">
+            //                 <a href="info.html?${val.goodsId}"><img ljz="${val.url}" alt=""></a>
+            //                 <a href="info.html" class="aa">${val.tip}</a>
+            //                 <b>${val.price}</b>
+            //                 <span class="btn">加入购物车</span>
+            //             </div>`
+            // })
+            for(var i = this.index*this.num;i<(this.index+1)*this.num;i++){
+                if(i < this.res.length){
+                    // console.log(this.res);
+                str += `<div class="box" qwe="${this.res[i].goodsId}">
+                        <a href="info.html?${this.res[i].goodsId}"><img ljz="${this.res[i].url}" alt=""></a>
+                        <a href="info.html" class="aa">${this.res[i].tip}</a>
+                        <b>${this.res[i].price}</b>
+                        <span class="btn">加入购物车</span>
+                    </div>`
+                    }
+                }
+                // console.log(str)
+                this.cont.innerHTML = str;
+        }
+        creatPage(){
+            this.maxNum = Math.ceil(this.res.length / this.num);
+            var str = "";
+            for(var i = 0;i < this.maxNum;i++){
+                str += `<li class="page-item"><a class="page-link" href="#">${i+1}</a></li>`
+            }
+            // console.log(str)
+            this.cont2.innerHTML = str;
+            console.log(str)
+            this.setActive();
+        }
+        setActive(){
+            console.log(this.cont2.children.length)
+            for(var i = 0;i < this.cont2.children.length;i++){
+                this.cont2.children[i].className = "";
+            }
+            console.log(this.index)
+            this.cont2.children[this.index].className = "active";
+        }
+        pageEvent(){
+            var that = this;
+            this.up.onclick = function(){
+                that.changeIndex(0);
+            }
+            this.down.onclick = function(){
+                that.changeIndex(1);
+            }
+        }
+        changeIndex(type){
+            if(type == 0){
+                if(this.index == 0){
+                    this.index = this.maxNum-1;
+                }else{
+                    this.index--;
+                }
+            }else{
+                if(this.index == this.maxNum-1){
+                    this.index = 0
+                }else{
+                    this.index++;
+                }
+            }
+            this.setActive();
+            this.display();
         }
         lazy(){
             this.scrollT = document.documentElement.scrollTop;

@@ -8,9 +8,9 @@
     <link rel="stylesheet" href="../css/register.css">
     <link rel="stylesheet" href="../css/public.css">
 </head>
-<script src="../jquery.1.12.4.js"></script>
-<script src="../js/jquery.validate.js"></script>
-<script src="../js/jquery.validate.messages_zh.js"></script>
+<script src="../libs/jquery.1.12.4.js"></script>
+<script src="../libs/jquery.validate.js"></script>
+<script src="../libs/jquery.validate.messages_zh.js"></script>
 <script type="text/javascript">
 		
     $("form").validate();
@@ -42,7 +42,7 @@
                 <p class="p3"><i>*</i>确认密码：<input type="text" name="repass" value="" equalTo="#pass" required=true></p>
                 <p class="p4"><i>*</i>手机：<input type="text" name="tel" id="tel"  number=true maxlength="11" minlength="11" required=true></p>
                 <p class="p5"><i>*</i>邮箱：<input type="text" name="email" id="email" email=true ></p>
-                <p class="p6"><input type="submit" id="sub" value="立即注册"></p>
+                <p class="p6"><input type="button" id="sub" value="立即注册"></p>
                 <p class="p7">注册的状态：<span></span></p>
             </form>
             <div class="money">
