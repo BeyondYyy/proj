@@ -102,7 +102,7 @@ gulp.task("hyg",()=>{
 
 // ES6转ES5
 gulp.task("sTf",()=>{
-    gulp.src("./src/js/index.js")
+    gulp.src("./src/js/**/*")
     .pipe(babel())
     .pipe(gulp.dest("server/js"))
 })
