@@ -213,7 +213,8 @@ main {
     margin-left: 51px;
     height: 70px;
     width: 350px;
-    border: #ddd 1px solid; }
+    border: #ddd 1px solid;
+    display: flex; }
     main .photo .middle img {
       margin-left: 40px;
       border: #356acb 2px solid;

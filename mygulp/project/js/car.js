@@ -1,13 +1,14 @@
 ;(function(){
-    "use strict"
+    // "use strict"
     class Car{
         constructor(){
             this.tbody = document.querySelector("tbody");
-            console.log(this.tbody)
+            // console.log(this.tbody)
             this.url = "http://localhost/mygulp/project/data/goods.json";
             console.log(this.url)
             this.load();
             this.addEvent()
+            //购物车数量
             this.em = document.querySelector("header .right em")
             this.n = JSON.parse(getCookie("goods")).length;
             this.em.innerHTML = this.n;
@@ -22,6 +23,7 @@
                         that.goods.splice(i,1)
                     });
                     this.n--;
+                    history.go(0);
                 }
             })
             this.tbody.addEventListener("input",function(eve){

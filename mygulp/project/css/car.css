@@ -276,6 +276,7 @@ main {
         main table thead tr .th4 {
           width: 240px; }
     main table tbody tr {
+      cursor: pointer;
       background: #fff; }
       main table tbody tr td {
         height: 95px; }

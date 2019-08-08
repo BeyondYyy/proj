@@ -1,28 +1,24 @@
 
 ;(function(){
+    "use strict"
     class Login{
         constructor(){
-            // 注册的接口
             this.url = "http://api.icodeilife.cn:81/user";
-            // 获取元素
             this.user = $("#user");
             this.pass = $("#pass");
             this.tel = $("#tel");
             this.email = $("#email");
             this.btn = $("#sub");
             this.state = $(".p7 span");
-            // 绑定点击事件
             this.addEvent();
         }
         addEvent(){
             var that = this;
             this.btn.click(function(){
-                // 开启ajax
                 that.load()
             })
         }
         load(){
-            // 请求注册接口
             $.ajax({
                 url:this.url,
                 data:{

@@ -22,9 +22,7 @@
             // 利用事件委托找到按钮
             this.cont.addEventListener("click",function(eve){
                 if(eve.target.className == "btn"){
-                    // 存cookie，存什么？2.唯一的信息，商品的货号
                     that.id = eve.target.parentNode.getAttribute("qwe");
-                    // 3.存cookie了
                     that.setCookie();
                 }
                 that.n++;
@@ -34,33 +32,25 @@
         setCookie(){
             this.goods = getCookie("goods") ? JSON.parse(getCookie("goods")) : [];
             if(this.goods.length == 0){
-                // 第一次:直接写数组,数组中放一个对象
                 this.goods.push({
                     id:this.id,
                     num:1
                 })
             }else{
-                // 之后存:新商品和老商品
-                // 先遍历,比较
                 var i = 0;
                 var onoff = this.goods.some((val,index)=>{
                     i = index;
                     return val.id == this.id;
                 })
                 if(onoff){
-                    // 老商品:
-                    // 修改对应对象的num属性
                     this.goods[i].num++
                 }else{
-                    // 新商品:
-                    // 增加对象
                     this.goods.push({
                         id:this.id,
                         num:1
                     })
                 }
             }
-            // 再设置
             setCookie("goods",JSON.stringify(this.goods));
         }
         load(){
@@ -68,7 +58,6 @@
             ajaxGet(this.url,function(res){
                 that.res = JSON.parse(res);
                 that.display();
-                //分页
                 //懒加载
                 that.aimg = document.querySelectorAll("img");
                 // console.log(that.aimg)
@@ -84,7 +73,6 @@
                     },100)
                 }
                 that.creatPage();
-                
             })
         }
 
@@ -122,15 +110,15 @@
             }
             // console.log(str)
             this.cont2.innerHTML = str;
-            console.log(str)
+            // console.log(str)
             this.setActive();
         }
         setActive(){
-            console.log(this.cont2.children.length)
+            // console.log(this.cont2.children.length)
             for(var i = 0;i < this.cont2.children.length;i++){
                 this.cont2.children[i].className = "";
             }
-            console.log(this.index)
+            // console.log(this.index)
             this.cont2.children[this.index].className = "active";
         }
         pageEvent(){
@@ -158,6 +146,19 @@
             }
             this.setActive();
             this.display();
+            this.aimg = document.querySelectorAll("img");
+                // console.log(that.aimg)
+                this.arr = Array.from(this.aimg);
+                this.t;
+                this.lazy();
+                var that = this;
+                onload = onscroll = function(){
+                    clearTimeout(that.t);
+                    var _that = that
+                    that.t = setTimeout(function(){
+                        _that.lazy();
+                    },100)
+                }
         }
         lazy(){
             this.scrollT = document.documentElement.scrollTop;
@@ -167,7 +168,6 @@
                 // console.log(`i:${i}`);
                 if(this.arr[i].offsetTop - this.scrollT < this.clientH){
                     this.arr[i].src = this.arr[i].getAttribute("ljz");
-                    // 小心使用：在循环中修改了循环次数
                     this.arr.splice(i,1)
                 }
             }
@@ -175,5 +175,4 @@
 
     }
     new List;
-
 })();

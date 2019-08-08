@@ -1,3 +1,4 @@
+
 function ajaxGet(url,success,data){
 	data = data || {};
 	var str = '';

@@ -1,8 +1,12 @@
 ;(function(){
     "use strict"
     // top
+    var em = document.querySelector("header .right em")
+    var n = JSON.parse(getCookie("goods")).length;
+    // console.log(em,n)
+    em.innerHTML = n;
     var msg = localStorage.getItem("loginUser");
-        console.log(msg)
+        // console.log(msg)
         if(msg){
         $("#top").find(".p1").hide();
         $("#top").find(".p2").show();
@@ -10,6 +14,11 @@
     }else{
         $("#top").find(".p1").show();
         $("#top").find(".p2").hide();
+        $("header").find(".right").find("a")
+        .html("请登录").css({
+            fontSize:14,
+            fontWeigth:700
+        })
     }
 
     // 点击退出时,修改登录状态
