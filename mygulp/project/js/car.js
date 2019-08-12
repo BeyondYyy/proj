@@ -1,10 +1,10 @@
 ;(function(){
-    // "use strict"
+    "use strict"
     class Car{
         constructor(){
             this.tbody = document.querySelector("tbody");
             // console.log(this.tbody)
-            this.url = "http://localhost/mygulp/project/data/goods.json";
+            this.url = "http://localhost/mygulp2/project/data/goods.json";
             console.log(this.url)
             this.load();
             this.addEvent()

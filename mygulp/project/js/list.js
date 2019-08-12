@@ -3,8 +3,9 @@
     class List{
         constructor(){
             this.cont = document.querySelector("main");
-            this.url = "http://localhost/mygulp/project/data/goods.json";
-            this.em = document.querySelector("header .right em")
+            this.url = "http://localhost/mygulp2/project/data/goods.json";
+            this.em = document.querySelector("header .right em");
+            console.log(this.url)
             this.load();
             // 1.绑定事件
             this.addEvent();
@@ -13,6 +14,7 @@
             this.cont2 = document.querySelector(".cont2");
             this.up = document.querySelector(".up");
             this.down = document.querySelector(".down")
+            console.log(this.cont,this.up)
             this.num = 15;
             this.index = 0;
             this.pageEvent();
@@ -174,5 +176,5 @@
         }
 
     }
-    new List;
+    new List();
 })();

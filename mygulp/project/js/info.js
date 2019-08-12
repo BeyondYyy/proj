@@ -2,7 +2,7 @@
     "use strict"
     class Magnifier{
         constructor(){
-            this.photo = document.querySelector(".BBox")
+            this.photo = document.querySelector(".photo")
             // this.bImg = this.bBox.children[0];
             console.log(this.photo)
             // console.log(this.bImg)
@@ -19,14 +19,15 @@
                 // console.log(that.res)
                 that.res = JSON.parse(res);
                 that.display()
-                that.change = document.querySelector(".change");
-                that.change2 = document.querySelector(".change2");
+                // that.change = document.querySelector(".change");
+                // that.change2 = document.querySelector(".change2");
+                // console.log(that.change)
                 that.a = document.querySelectorAll(".middle a")[1]
-                console.log(that.a)
+                // console.log(that.a)
                 // console.log(that.change)
                 var _that = that;
                 
-                if(that.a.className.includes("change")){
+                if(that.a.className.includes("change2")){
                     that.change.onfocus = function(){
                         _that.changeDisplay()
                     }
@@ -75,6 +76,9 @@
             // console.log(str)
             this.sBox = document.querySelector(".s_box");
             this.bBox = document.querySelector(".b_box");
+            this.change = document.querySelector(".change");
+            this.change2 = document.querySelector(".change2");
+            // console.log(this.change)
             this.bImg = this.bBox.children[0];
             this.addEvent();
         }
@@ -100,6 +104,8 @@
             // console.log(str)
             this.sBox = document.querySelector(".s_box");
             this.bBox = document.querySelector(".b_box");
+            this.change = document.querySelector(".change");
+            this.change2 = document.querySelector(".change2");
             this.bImg = this.bBox.children[0];
             this.addEvent();
         }
