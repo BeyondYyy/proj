@@ -97,23 +97,23 @@
     })
 
     // main(选项卡)
-    $(".js").hover(function(){
-        if(!($(this).is("js"))){
-            $(this).find("dt").css({
-                color:"#556ecc",
-                borderBottom:"#556ecc 2px solid"
-            }).siblings("dd").css("display","block");
-            $(this).siblings().find("dd").css({
-                display:"none"
-            })
-            $(this).siblings("dl").find("dt").css({
-                color:"#666",
-                borderBottom:"#aaa 2px solid"
-            })
-        }
-    },function(){
-        $(this).siblings().find("dd").css("display","none")
-    })
+    // $(".js").hover(function(){
+    //     if(!($(this).is("js"))){
+    //         $(this).find("dt").css({
+    //             color:"#556ecc",
+    //             borderBottom:"#556ecc 2px solid"
+    //         }).siblings("dd").css("display","block");
+    //         $(this).siblings().find("dd").css({
+    //             display:"none"
+    //         })
+    //         $(this).siblings("dl").find("dt").css({
+    //             color:"#666",
+    //             borderBottom:"#aaa 2px solid"
+    //         })
+    //     }
+    // },function(){
+    //     $(this).siblings().find("dd").css("display","none")
+    // })
     // 三楼
     $(".jin").find("img").hover(function(){
         $(this).stop().animate({
@@ -131,12 +131,12 @@
     })
 
     // 楼层
-    $("#Btns").find("li").click(function(){
-        var index = $(this).index();
-        var iNowFloor = $(".floor").eq(index);
-        var t = iNowFloor.offset().top;
-        $("html").stop().animate({
-            scrollTop:t
-        })
-    })
+    // $("#Btns").find("li").click(function(){
+    //     var index = $(this).index();
+    //     var iNowFloor = $(".floor").eq(index);
+    //     var t = iNowFloor.offset().top;
+    //     $("html").stop().animate({
+    //         scrollTop:t
+    //     })
+    // })
 })();

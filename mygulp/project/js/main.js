@@ -1,19 +1,9 @@
-require.config({
-    baseUrl:"module",
-    paths:{
-        list:"list copy",
-        car:"car copy",
-        index:"register copy",
-        jq:"../libs/jquery.1.12.4"
-    }
-})
 
-require(["jq","Car copy","List copy","Register copy"],function(_,c,l,r){
-    // console.log(l)
-    // console.log($)
-    // console.log(c)
-    // console.log(r)
-    new l({})
-    new c({})
-    new r({})
+
+require(["../libs/jquery.1.12.4","../js/choose","../js/floor"],function(_,c,f){
+    console.log(f)
+    let fl = new f;
+    let ch = new c;
+    fl.addEvent();
+    ch.addEvent();
 })

@@ -1,4 +1,5 @@
-;(function(){
+
+    define(function(){
     "use strict"
     class Car{
         constructor(){
@@ -23,7 +24,7 @@
                         that.goods.splice(i,1)
                     });
                     this.n--;
-                    history.go(0);
+                    // history.go(0);
                 }
             })
             this.tbody.addEventListener("input",function(eve){
@@ -92,6 +93,5 @@
             this.tbody.innerHTML = str;
         }
     }
-
-    new Car();
-})();
+    return Car;
+})
